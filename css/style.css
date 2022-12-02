@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  height: 100%;
+}
+body{
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+button{
+  padding: 8px 16px;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background: #e69100;
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.alert{
+  background: #ffdb9b;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid #ffa502;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.alert.showAlert{
+  opacity: 1;
+  pointer-events: auto;
+}
+.alert.show{
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+.alert.hide{
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+.alert .fa-exclamation-circle{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ce8500;
+  font-size: 30px;
+}
+.alert .msg{
+  padding: 0 20px;
+  font-size: 18px;
+  color: #000000;
+}
+
+.error .msgerror {
+    padding: 0 20px;
+    font-size: 18px;
+    color: #000000;
+}
+
+.allgood .msgallgood {
+    padding: 0 20px;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+.alert .close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffd080;
+  padding: 20px 18px;
+  cursor: pointer;
+}
+.alert .close-btn:hover{
+  background: #ffc766;
+}
+.alert .close-btn .fas{
+  color: #ce8500;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+#btnerror{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FC745F;
+    padding: 20px 18px;
+    cursor: pointer;
+}
+
+#btnerror:hover{
+    background: #FF371B;
+}
+
+#btnerror .fas{
+    color: #CE3200;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+#btnallgood{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4FDF01;
+    padding: 20px 18px;
+    cursor: pointer;
+}
+
+#btnallgood:hover{
+    background: #8AC817;
+}
+
+#btnallgood .fas{
+    color: #5A8805;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+
+#allgoodtrigger {
+    background-color: green;
+}
+
+#errortrigger {
+    background-color: red;
+}
+
+.error{
+    background: #FF4832;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border-radius: 4px;
+    border-left: 8px solid #BC1906;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.error.showerror{
+    opacity: 1;
+    pointer-events: auto;
+}
+.error.show{
+    animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+    0%{
+        transform: translateX(100%);
+    }
+40%{
+        transform: translateX(-10%);
+    }
+80%{
+        transform: translateX(0%);
+    }
+100%{
+        transform: translateX(-10px);
+    }
+}
+.error.hide{
+    animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+    0%{
+        transform: translateX(-10px);
+    }
+40%{
+        transform: translateX(0%);
+    }
+80%{
+        transform: translateX(-10%);
+    }
+100%{
+        transform: translateX(100%);
+    }
+}
+.error .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ce8500;
+    font-size: 30px;
+}
+.error .msg{
+    padding: 0 20px;
+    font-size: 18px;
+    color: #ce8500;
+}
+.error .close-btn{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffd080;
+    padding: 20px 18px;
+    cursor: pointer;
+}
+.error .close-btn:hover{
+    background: #ffc766;
+}
+.error .close-btn .fas{
+    color: #ce8500;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+.allgood{
+    background: #4EB317;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border-radius: 4px;
+    border-left: 8px solid #318902;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.allgood.showallgood{
+    opacity: 1;
+    pointer-events: auto;
+}
+.allgood.show{
+    animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+    0%{
+        transform: translateX(100%);
+    }
+40%{
+        transform: translateX(-10%);
+    }
+80%{
+        transform: translateX(0%);
+    }
+100%{
+        transform: translateX(-10px);
+    }
+}
+.allgood.hide{
+    animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+    0%{
+        transform: translateX(-10px);
+    }
+40%{
+        transform: translateX(0%);
+    }
+80%{
+        transform: translateX(-10%);
+    }
+100%{
+        transform: translateX(100%);
+    }
+}
+.allgood .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ce8500;
+    font-size: 30px;
+}
+.allgood .msg{
+    padding: 0 20px;
+    font-size: 18px;
+    color: #ce8500;
+}
+.allgood .close-btn{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffd080;
+    padding: 20px 18px;
+    cursor: pointer;
+}
+.allgood .close-btn:hover{
+    background: #ffc766;
+}
+.allgood .close-btn .fas{
+    color: #ce8500;
+    font-size: 22px;
+    line-height: 40px;
+}

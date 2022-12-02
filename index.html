@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Alerte - Notification system</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   </head>
+   <body>
+      <button id="alert">Trigger alert</button>
+   <button id="errortrigger">Trigger error</button>
+   <button id="allgoodtrigger">Trigger validation</button>
+   <!-- alerte -->
+      <div class="alert hide">
+         <span class="fas fa-exclamation-circle"></span>
+         <span class="msg">Lorem Ipsum : Dolor sit amet</span>
+         <div class="close-btn">
+            <span class="fas fa-times"></span>
+         </div>
+      </div>
+ <!-- erreur -->
+    <div class="error hide">
+    <span class="fa-solid fa-triangle-exclamation"></span>
+        <span class="msgerror">Lorem Ipsum : Dolor sit amet</span>
+        <div id="btnerror" class="close-btn">
+            <span class="fas fa-times"></span>
+        </div>
+    </div>
+   <!-- validation -->
+   <div class="allgood hide">
+    <span class="fas fa-check"></span>
+        <span class="msgallgood">Lorem Ipsum : Dolor sit amet</span>
+   <div id="btnallgood" class="close-btn">
+            <span class="fas fa-times"></span>
+        </div>
+   </div>
+
+      <script>
+         $('#alert').click(function(){
+           $('.alert').addClass("show");
+           $('.alert').removeClass("hide");
+           $('.alert').addClass("showAlert");
+           setTimeout(function(){
+             $('.alert').removeClass("show");
+             $('.alert').addClass("hide");
+           },2300);
+         });
+      $('#errortrigger').click(function(){
+          $('.error').addClass("show");
+          $('.error').removeClass("hide");
+          $('.error').addClass("showerror");
+          setTimeout(function(){
+              $('.error').removeClass("show");
+              $('.error').addClass("hide");
+          },2300);
+      });
+      $('#allgoodtrigger').click(function(){
+          $('.allgood').addClass("show");
+          $('.allgood').removeClass("hide");
+          $('.allgood').addClass("showallgood");
+          setTimeout(function(){
+              $('.allgood').removeClass("show");
+              $('.allgood').addClass("hide");
+          },2300);
+      });
+         $('.close-btn').click(function(){
+           $('.alert').removeClass("show");
+           $('.alert').addClass("hide");
+         });
+        $('.close-btn').click(function(){
+            $('.error').removeClass("show");
+            $('.error').addClass("hide");
+        });
+        $('.close-btn').click(function(){
+            $('.allgood').removeClass("show");
+            $('.allgood').addClass("hide");
+      });
+      </script>
+   </body>
+</html>
