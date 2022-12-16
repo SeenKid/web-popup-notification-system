@@ -1,3 +1,3 @@
 # web-popup-notification-system
 
-little notifications system, inspired by CodingNepal
+Updated and adapted for a c# asp.net project that is using entity framework.
